@@ -1,30 +1,29 @@
-# Share a Folder from Linux to Windows
+# Share a Folder from Windows and Access it on Linux
 
-## Steps to Share a Folder from Linux to Windows
+## Steps to Share a Folder from Windows and Access it on Linux
 
-### 1. Install Samba and Required Packages
-Samba allows file sharing between Linux and Windows. To install it, run the following commands in the terminal:
-```bash
-sudo apt update
-sudo apt install samba
-sudo apt install nautilus
-sudo apt install nautilus-share
-```
+### 1. Share the Folder from Windows and Allow Discovery
+First, make sure you have shared the folder on Windows and enabled network discovery. You can do this by going to your folder properties, selecting the "Sharing" tab, and ensuring network discovery is enabled from the settings.
 
-### 2. Open Nautilus File Manager
-Use the **Files** (Nautilus) file manager to access your folders. You can search for it by pressing the Super key (Windows key on some keyboards) and typing `nautilus` as shown in the image.
+### 2. Open File Manager on Linux
+Open the file manager (such as **Nautilus** or any other you are using) on your Linux machine.
 
-![find](https://github.com/user-attachments/assets/4cc1d453-9229-42b1-a2e7-7e81eec72a8a)
+### 3. Navigate to the Network Section
+Go to the **Network** section in the file manager to see shared devices on your local network.
+
+![network](https://github.com/user-attachments/assets/7b799fbd-df59-42d7-b486-805cdfe3e6b1)
 
 
-### 3. Right-click on the Folder to Share
-Navigate to the folder you wish to share with Windows, right-click on it, and select **Local Network Share**.
+### 4. Find the Windows Shared Folder
+Locate the Windows shared folder on the network. It should appear under the list of shared devices.
 
-![option](https://github.com/user-attachments/assets/080ad6e6-41de-427d-8c57-0a6854d84f59)
+![winnet](https://github.com/user-attachments/assets/1b240948-ecc3-429d-8b85-c687b8a83b75)
 
 
-### 4. Enable Sharing
-Once you click "Local Network Share", a sharing options window will appear. Enable the options like "Share this folder" and, if necessary, "Allow others to create and delete files in this folder". If you want the folder to be accessible without a password, enable guest access.
+### 5. Access via IP Address if Necessary
+If the shared folder does not appear, try accessing it using the IP address of the Windows machine. Enter it in the file manager using the format: `smb://<Windows-IP-Address>`.
 
-### 5. Access the Shared Folder from Windows
-On your Windows machine, press `Win + R` to open the Run dialog and type `\\<Linux IP Address>` (replace `<Linux IP Address>` with the IP of your Linux machine). You should now be able to see the shared folder.
+![ip](https://github.com/user-attachments/assets/54e2b715-006f-4547-92b1-84bed701ae64)
+
+
+Once connected, you should be able to browse and use the shared files from your Linux system.
